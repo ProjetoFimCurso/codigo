@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 import com.fortysevendeg.swipelistview.BaseSwipeListViewListener;
 import com.fortysevendeg.swipelistview.SwipeListView;
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class Lista_Calendar extends Activity {
 

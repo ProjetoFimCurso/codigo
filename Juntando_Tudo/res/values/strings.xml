@@ -14,6 +14,9 @@
     <string name="change_list_select">Selecione uma lista</string>
     
     
+    <string name="menu_add_google_user">Adicionar usuário do google</string>
+    
+    
     <!-- Default Lists -->
     <string name="INBOX">Caixa de Entrada</string>
     <string name="NEXT_ACTIONS">Próximas Ações</string>

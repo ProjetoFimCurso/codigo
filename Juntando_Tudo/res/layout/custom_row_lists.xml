@@ -18,20 +18,9 @@
         
                
 
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/swipe_share"
-                style="@style/MyListImageButtonAction"
-                android:src= "@drawable/ic_action_share"
-                />
+   
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/swipe_button3"
-                style="@style/MyListButtonAction"
-                android:text="Button 3"/>
+    
 
     </LinearLayout>
      <RelativeLayout

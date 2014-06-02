@@ -12,7 +12,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class AddCheckLineDialog extends DialogFragment {
 

@@ -26,7 +26,7 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.fortysevendeg.swipelistview.SwipeListView;
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class Controller extends Application {
 	private ActionBox actBox;
@@ -93,10 +93,9 @@ public class Controller extends Application {
 	 * Loads by copying to the current List reference from the values from
 	 * Database
 	 */
-	public void loadActionBox() {
+	public void reloadActionBox() {
 		this.actBox.getCheckLines().clear();
-		this.actBox.getCheckLines().addAll(
-				dbHelper.getAllToDosByTag(actBox.getId()));
+		this.actBox.getCheckLines().addAll(dbHelper.getAllToDosByTag(this.actBox.getId()));
 	}
 
 	/**
@@ -153,7 +152,8 @@ public class Controller extends Application {
 			chkLnNew.setActionbox_id(actBoxDestination.getId());
 
 			dbHelper.createCheckLine(chkLnNew);
-
+			reloadActionBox();
+			itAdapter.notifyDataSetChanged();
 		}
 
 	}
@@ -288,27 +288,7 @@ public class Controller extends Application {
 
 	}
 
-	public void codigoTeste() {
-		dbHelper = new DBHelper(this);
-		// ActionBox listaTeste = new ActionBox("bla");
-
-		// getAllActionBoxes
-		// List<ActionBox> lAB = new ArrayList<ActionBox>();
-		// lAB = dbHelper.getAllActionBoxes();
-		// Iterator<ActionBox> iAB = lAB.iterator();
-		// String strActionBox = "";
-		// while (iAB.hasNext()) {
-		// ActionBox actionBox = (ActionBox) iAB.next();
-		// strActionBox += "" + actionBox.getName() + "ID: "+ actionBox.getId()
-		// + " \n";
-		// }
-		// loadList(1, dbHelper);
-		loadActionBox();
-		// lstCheckLine = getAllChecklines(dbHelper);
-		// actBox.loadAllCheckLines(dbHelper);
-
-	}
-
+	
 	public void setupBD() {
 		if (dbHelper == null) {
 			dbHelper = new DBHelper(getApplicationContext());
@@ -316,13 +296,7 @@ public class Controller extends Application {
 		dbHelper.populateActionBoxesTable();
 	}
 
-	public void populaActionBoxTeste() {
-		for (int j = 0; j < 20; j++) {
-			addCheckLine("itemTeste" + j, dbHelper, (new Date()).toString());
-			loadActionBox();
-
-		}
-	}
+	
 
 	public long getId() {
 		return actBox.getId();
@@ -347,7 +321,6 @@ public class Controller extends Application {
 
 		// --- agora faz o ActBox ter suas listas referenciando a lista ser
 		// compartilhada
-
 		lstChk.addAll(actBox.getCheckLines());
 		actBox.setCheckLines(lstChk);
 	}
@@ -384,7 +357,6 @@ public class Controller extends Application {
 		itAdapter = new ItemAdapter(lista, R.layout.custom_row, itemData);
 		swipelistview.setAdapter(itAdapter);
 		this.loadAndShareListWith(itemData);
-		itAdapter.notifyDataSetChanged();
 	}
 
 	public void setAdapter(OtherLists lista) {

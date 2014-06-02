@@ -52,8 +52,8 @@ public class CalendarAdapter {
 					// ignore
 
 				}
-				chkLnNew.setText(title + " on " + df.format(start) + " at "
-						+ tf.format(start) + "ID --> " + id);
+				chkLnNew.setText(title + " -------------- " + df.format(start) + " "
+						+ tf.format(start) );
 
 				// order
 

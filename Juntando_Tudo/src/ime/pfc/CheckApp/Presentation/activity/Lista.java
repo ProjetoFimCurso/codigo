@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import com.fortysevendeg.swipelistview.BaseSwipeListViewListener;
 import com.fortysevendeg.swipelistview.SwipeListView;
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class Lista extends Activity {
 
@@ -29,14 +29,15 @@ public class Lista extends Activity {
 		setSwipeListView();
 
 		aController.setListView(swipelistview);
-
+		aController.setAdapter(this);
 		// Controller.LoadActionBox();
 		// aController.populaActionBoxTeste();
 		// Toast.makeText(this , String.valueOf(aController.getId() ),
 		// Toast.LENGTH_SHORT).show();
-		aController.setAdapter(this);
+		
 
 	}
+
 
 	public int convertDpToPixel(float dp) {
 		DisplayMetrics metrics = getResources().getDisplayMetrics();
@@ -72,12 +73,12 @@ public class Lista extends Activity {
 		return true;
 	}
 
-	@Override
-	protected void onStop() {
-		super.onStop();
-		// Controller aController = (Controller) getApplicationContext();
-		aController.persist();
-	}
+//	@Override
+//	protected void onStop() {
+//		super.onStop();
+//		// Controller aController = (Controller) getApplicationContext();
+//		aController.persist();
+//	}
 
 	private boolean add_method() {
 		DialogFragment dFrag = new AddCheckLineDialog();

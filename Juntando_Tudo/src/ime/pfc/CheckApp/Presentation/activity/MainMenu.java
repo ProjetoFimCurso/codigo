@@ -1,15 +1,17 @@
 package ime.pfc.CheckApp.Presentation.activity;
 
+import com.CheckApp.R;
+
 import ime.pfc.CheckApp.Business.Controller;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.juntando_tudo.R;
 
 public class MainMenu extends Activity {
 
@@ -38,6 +40,24 @@ public class MainMenu extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected (MenuItem item){
+		switch (item.getItemId()) {
+		case R.id.addGoogleUser:
+			Intent addAccountIntent = new Intent(
+					android.provider.Settings.ACTION_ADD_ACCOUNT)
+					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			addAccountIntent.putExtra(Settings.EXTRA_ACCOUNT_TYPES,
+					new String[] { "com.google" });
+			this.startActivity(addAccountIntent);
+			break;
+
+		default:
+			break;
+		}
 		return true;
 	}
 

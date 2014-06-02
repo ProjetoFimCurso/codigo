@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.CalendarContract.Events;
 import android.util.Log;
 
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class DBHelper extends SQLiteOpenHelper {
 

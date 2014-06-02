@@ -18,9 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class ItemAdapter extends ArrayAdapter<CheckLine> {
 

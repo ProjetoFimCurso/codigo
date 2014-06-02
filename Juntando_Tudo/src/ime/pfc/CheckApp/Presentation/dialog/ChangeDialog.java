@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
 
-import com.juntando_tudo.R;
+import com.CheckApp.R;
 
 public class ChangeDialog extends DialogFragment {
 
@@ -51,6 +51,7 @@ public class ChangeDialog extends DialogFragment {
 								getActivity());
 						aController.forwardChecklineToAnotherList(position,
 								which, getActivity());
+						
 						builderInner.setMessage(strName);
 						builderInner.setTitle("Your Selected Item is");
 						builderInner.setPositiveButton("Ok",
